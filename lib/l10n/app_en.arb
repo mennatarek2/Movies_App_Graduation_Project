@@ -1,0 +1,12 @@
+{
+  "@@locale": "en",
+  "appName": "Movies",
+  "@appName": {
+    "description": "The application name"
+  },
+  "splashLoading": "Loading...",
+  "@splashLoading": {
+    "description": "Loading text on splash screen"
+  }
+}
+
