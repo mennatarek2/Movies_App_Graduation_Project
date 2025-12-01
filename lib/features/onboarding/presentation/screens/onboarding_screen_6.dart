@@ -14,164 +14,132 @@ class OnboardingScreen6 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final availableHeight = MediaQuery.of(context).size.height -
+        MediaQuery.of(context).padding.top -
+        MediaQuery.of(context).padding.bottom;
+
+
+    final topImageHeight = availableHeight * 0.75;
+    final bottomBoxHeight = availableHeight * 0.38;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color(0xFF0A0A0A),
       body: Stack(
         children: [
-          Positioned.fill(
+
+          SizedBox(
+            height: topImageHeight,
+            width: double.infinity,
             child: Image.asset(
-              'assets/images/movies_posters_6.png',
+              "assets/images/onboard5.png",
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) {
                 return Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Colors.grey[800]!,
-                        Colors.brown[800]!,
-                        Colors.orange[900]!.withOpacity(0.5),
+                        Color(0xFF1E3A8A),
+                        Color(0xFF1F2937),
                         Colors.black,
                       ],
                     ),
                   ),
-                  child: Center(
-                    child: Icon(
-                      Icons.movie_filter,
-                      color: Colors.grey[700],
-                      size: 80,
-                    ),
+                  child: const Center(
+                    child: Icon(Icons.movie_filter, color: Colors.grey, size: 80),
                   ),
                 );
               },
             ),
           ),
 
-          Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.transparent,
-                    Colors.black.withOpacity(0.2),
-                    Colors.black.withOpacity(0.5),
-                    Colors.black.withOpacity(0.9),
-                  ],
-                  stops: const [0.0, 0.6, 0.8, 1.0],
-                ),
-              ),
-            ),
-          ),
 
-          Positioned(
-            bottom: 200,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: Text(
-                'TIME IS THE ENEMY',
-                style: GoogleFonts.poppins(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                  letterSpacing: 2.0,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
+          Align(
+            alignment: Alignment.bottomCenter,
             child: Container(
+              height: availableHeight * 0.40,
+              width: double.infinity,
+              padding: const EdgeInsets.fromLTRB(24, 40, 24, 32),
               decoration: const BoxDecoration(
                 color: Color(0xFF0A0A0A),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(32),
-                  topRight: Radius.circular(32),
+                  topLeft: Radius.circular(55),
+                  topRight: Radius.circular(55),
                 ),
               ),
-              child: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 24.0,
-                    vertical: 32.0,
+              child: Column(
+                children: [
+                  Text(
+                    'Start Watching Now',
+                    style: GoogleFonts.poppins(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      height: 1.2,
+                      letterSpacing: -0.5,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Start Watching Now',
+
+                  const SizedBox(height: 16),
+
+
+                  const Spacer(),
+
+
+                  SizedBox(
+                    width: double.infinity,
+                    height: 56,
+                    child: ElevatedButton(
+                      onPressed: onFinish,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.accent,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      child: Text(
+                        'Finish',
                         style: GoogleFonts.poppins(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                          height: 1.2,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 16),
+
+
+                  SizedBox(
+                    width: double.infinity,
+                    height: 56,
+                    child: OutlinedButton(
+                      onPressed: onBack,
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: AppColors.accent,
+                        side: const BorderSide(
+                          color: AppColors.accent,
+                          width: 1.5,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      child: Text(
+                        'Back',
+                        style: GoogleFonts.poppins(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.accent,
                           letterSpacing: 0.5,
                         ),
-                        textAlign: TextAlign.center,
                       ),
-                      const SizedBox(height: 32),
-                      SizedBox(
-                        width: double.infinity,
-                        height: 56,
-                        child: ElevatedButton(
-                          onPressed: onFinish,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.accent,
-                            foregroundColor: Colors.white,
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                          ),
-                          child: Text(
-                            'Finish',
-                            style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black,
-                              letterSpacing: 0.5,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                      SizedBox(
-                        width: double.infinity,
-                        height: 56,
-                        child: OutlinedButton(
-                          onPressed: onBack,
-                          style: OutlinedButton.styleFrom(
-                            foregroundColor: AppColors.accent,
-                            side: const BorderSide(
-                              color: AppColors.accent,
-                              width: 1.5,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                          ),
-                          child: Text(
-                            'Back',
-                            style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.accent,
-                              letterSpacing: 0.5,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
           ),

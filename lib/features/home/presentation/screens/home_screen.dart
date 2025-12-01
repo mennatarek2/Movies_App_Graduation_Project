@@ -183,13 +183,13 @@ class _HomeTabState extends State<HomeTab> {
               Center(
                 child: Image.asset(
                   'assets/images/available_now.png',
-                  height: 50,
+                  height: 70,
                   fit: BoxFit.contain,
                   errorBuilder: (context, error, stackTrace) {
                     return Text(
                       'Available Now',
-                      style: GoogleFonts.caveat(
-                        fontSize: 48,
+                      style: GoogleFonts.dancingScript(
+                        fontSize: 70,
                         fontWeight: FontWeight.w400,
                         color: Colors.white,
                       ),
@@ -203,13 +203,13 @@ class _HomeTabState extends State<HomeTab> {
               Center(
                 child: Image.asset(
                   'assets/images/watch_now.png',
-                  height: 45,
+                  height: 100,
                   fit: BoxFit.contain,
                   errorBuilder: (context, error, stackTrace) {
                     return Text(
                       'Watch Now',
-                      style: GoogleFonts.caveat(
-                        fontSize: 42,
+                      style: GoogleFonts.dancingScript(
+                        fontSize: 100,
                         fontWeight: FontWeight.w400,
                         color: Colors.white,
                       ),
