@@ -18,9 +18,7 @@ class OnboardingScreen5 extends StatelessWidget {
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
 
-
-    final topImageHeight = availableHeight * 0.80;
-    final bottomBoxHeight = availableHeight * 0.55;
+    final topImageHeight = availableHeight * 0.82;
 
     return Scaffold(
       backgroundColor: const Color(0xFF0A0A0A),
@@ -59,9 +57,8 @@ class OnboardingScreen5 extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: bottomBoxHeight,
               width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(24, 24, 24, 32),
+              padding: const EdgeInsets.fromLTRB(24, 24, 24, 16),
               decoration: const BoxDecoration(
                 color: Color(0xFF0A0A0A),
                 borderRadius: BorderRadius.only(
@@ -98,7 +95,7 @@ class OnboardingScreen5 extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
 
-                  const Spacer(),
+                  const SizedBox(height: 24),
 
 
                   SizedBox(

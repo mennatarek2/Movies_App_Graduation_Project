@@ -14,20 +14,17 @@ class OnboardingScreen4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final availableHeight = MediaQuery.of(context).size.height -
+    final availableHeight =
+        MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
 
-
-    final topImageHeight = availableHeight * 0.85;
-    final bottomBoxHeight = availableHeight * 0.48;
+    final topImageHeight = availableHeight * 0.82;
 
     return Scaffold(
-
       backgroundColor: const Color(0xFF0A0A0A),
       body: Stack(
         children: [
-
           SizedBox(
             height: topImageHeight,
             width: double.infinity,
@@ -48,20 +45,22 @@ class OnboardingScreen4 extends StatelessWidget {
                     ),
                   ),
                   child: const Center(
-                    child: Icon(Icons.movie_filter, color: Colors.grey, size: 80),
+                    child: Icon(
+                      Icons.movie_filter,
+                      color: Colors.grey,
+                      size: 80,
+                    ),
                   ),
                 );
               },
             ),
           ),
 
-
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: availableHeight * 0.48,
               width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(24, 40, 24, 32),
+              padding: const EdgeInsets.fromLTRB(24, 24, 24, 16),
               decoration: const BoxDecoration(
                 color: Color(0xFF0A0A0A),
                 borderRadius: BorderRadius.only(
@@ -70,6 +69,7 @@ class OnboardingScreen4 extends StatelessWidget {
                 ),
               ),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     'Create Watchlists',
@@ -87,7 +87,6 @@ class OnboardingScreen4 extends StatelessWidget {
 
                   Text(
                     'Save movies to your watchlist to keep track of what you want to watch next. Enjoy films in various qualities and genres.',
-
                     style: GoogleFonts.poppins(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
@@ -97,8 +96,7 @@ class OnboardingScreen4 extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
 
-                  const Spacer(),
-
+                  const SizedBox(height: 24),
 
                   SizedBox(
                     width: double.infinity,
@@ -124,7 +122,6 @@ class OnboardingScreen4 extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 16),
-
 
                   SizedBox(
                     width: double.infinity,

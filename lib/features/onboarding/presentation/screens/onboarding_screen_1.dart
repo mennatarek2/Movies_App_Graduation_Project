@@ -65,10 +65,7 @@ class OnboardingScreen1 extends StatelessWidget {
             right: 0,
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 24.0,
-                  vertical: 40.0,
-                ),
+                padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 20.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,

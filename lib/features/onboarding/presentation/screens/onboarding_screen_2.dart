@@ -9,17 +9,16 @@ class OnboardingScreen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final availableHeight = MediaQuery.of(context).size.height -
+    final availableHeight =
+        MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
 
-
-    final topImageHeight = availableHeight * 0.65;
+    final topImageHeight = availableHeight * 0.82;
     return Scaffold(
       backgroundColor: const Color(0xFF0A0A0A),
       body: Stack(
         children: [
-
           SizedBox(
             height: topImageHeight,
             width: double.infinity,
@@ -40,20 +39,22 @@ class OnboardingScreen2 extends StatelessWidget {
                     ),
                   ),
                   child: const Center(
-                    child: Icon(Icons.movie_filter, color: Colors.grey, size: 80),
+                    child: Icon(
+                      Icons.movie_filter,
+                      color: Colors.grey,
+                      size: 80,
+                    ),
                   ),
                 );
               },
             ),
           ),
 
-
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: availableHeight * 0.40,
               width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(24, 40, 24, 32),
+              padding: const EdgeInsets.fromLTRB(24, 24, 24, 16),
               decoration: const BoxDecoration(
                 color: Color(0xFF0A0A0A),
                 borderRadius: BorderRadius.only(
@@ -62,6 +63,7 @@ class OnboardingScreen2 extends StatelessWidget {
                 ),
               ),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     'Discover Movies',
@@ -88,7 +90,7 @@ class OnboardingScreen2 extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
 
-                  const Spacer(),
+                  const SizedBox(height: 24),
 
                   SizedBox(
                     width: double.infinity,
