@@ -594,6 +594,7 @@ class _HomeTabState extends State<HomeTab> {
     );
   }
 
+
   Widget _buildImageFallback(double width, double height) {
     return Container(
       width: width,
@@ -601,5 +602,6 @@ class _HomeTabState extends State<HomeTab> {
       color: Colors.grey[800],
       child: const Icon(Icons.movie, color: Colors.grey, size: 40),
     );
+    
   }
 }
